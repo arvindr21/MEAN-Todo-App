@@ -8,13 +8,20 @@
     <div class="alert alert-info text-center" ng-hide="todos.length > 0">
       <h3>No Todos yet!</h3>
     </div>
-    <div ng-repeat="todo in todos" class="todo" ng-class="todo.isCompleted ? 'strike' : ''">
-      <input type="checkbox" ng-checked="todo.isCompleted" ng-click="updateStatus($event, todo._id, $index)">
-      <span ng-show="!isEditable[$index]">{{todo.todo}}</span>
-      <input ng-show="isEditable[$index]" type="text" value="{{todo.todo}}" ng-keypress="edit($event,$index);">
-      <input ng-show="isEditable[$index]" type="button" class="btn btn-warning" value="Cancel" ng-click="isEditable[$index] = false" />
-      <input type="button" class="btn btn-danger pull-right" class="pull-right" value="Delete" ng-click="delete($index)" />
-      <input type="button" class="btn btn-info pull-right" ng-disabled="todo.isCompleted" class="pull-right" value="Edit" ng-click="isEditable[$index] = true" />
+    <div ng-repeat="todo in todos" class="todo col-md-12 col-sm-12 col-xs-12" ng-class="todo.isCompleted ? 'strike' : ''">
+      <div class="col-md-1 col-sm-1 col-xs-1">
+        <input type="checkbox" ng-checked="todo.isCompleted" ng-click="updateStatus($event, todo._id, $index)">
+      </div>
+      <div class="col-md-8 col-sm-8 col-xs-8">
+        <span ng-show="!isEditable[$index]">{{todo.todo}}</span>
+        <input ng-show="isEditable[$index]" type="text" value="{{todo.todo}}" ng-keypress="edit($event,$index);">
+        <input ng-show="isEditable[$index]" type="button" class="btn btn-warning" value="Cancel" ng-click="isEditable[$index] = false" />
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-3">
+        <input type="button" class="btn btn-info" ng-disabled="todo.isCompleted" class="pull-right" value="Edit" ng-click="isEditable[$index] = true" />
+        <input type="button" class="btn btn-danger" class="pull-right" value="Delete" ng-click="delete($index)" />
+      </div>
+
     </div>
   </div>
 </div>
