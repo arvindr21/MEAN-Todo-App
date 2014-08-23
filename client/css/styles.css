@@ -1,0 +1,28 @@
+* {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  font-family: calibri;
+}
+.strike {
+  text-decoration: line-through;
+  color: #ccc;
+}
+.todos {
+  padding: 20px;
+}
+.todo {
+  padding: 10px;
+  font-size: 21px;
+  border-bottom: 1px solid;
+}
+.todo span, .todo input {
+  margin-left: 20px;
+}
+.todo .btn {
+  margin-left: 5px;
+  width: 72px;
+}
+.todo:hover {
+  background: #e7e7e7;
+}
