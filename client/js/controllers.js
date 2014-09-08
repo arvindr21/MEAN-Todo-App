@@ -48,6 +48,7 @@ todoApp.controller('TodoCtrl', function($rootScope, $scope, todosFactory) {
         todo: $event.target.value.trim(),
         isCompleted: _t.isCompleted
       }).then(function(data) {
+              console.log(data);
         if (data.data.updatedExisting) {
           _t.todo = $event.target.value.trim();
           $scope.isEditable[i] = false;
