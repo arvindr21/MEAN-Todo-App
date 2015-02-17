@@ -23,7 +23,6 @@
   // Rerun the task when a file changes
   gulp.task('watch', function() {
     livereload.listen();
-
     gulp.src(_paths, {
       read: false
     })
@@ -32,8 +31,7 @@
       }))
       .pipe(jshint())
       .pipe(jshint.reporter('default'));
-
-    gulp.watch(_paths).on('change', livereload.changed);
+    watch(_paths, livereload.changed);
   });
 
   //lint js files
